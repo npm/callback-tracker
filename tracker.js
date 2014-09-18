@@ -1,4 +1,4 @@
-module.exports = tracker
+var wrappy = require('wrappy')
 
 var util = require('util')
 var tracks = {}
@@ -20,7 +20,8 @@ process.on('exit', function () {
   tracker.print()
 })
 
-function tracker (cb, options) {
+module.exports = wrappy(tracker)
+function tracker (options, cb) {
   if (typeof options === 'string')
     options = { key: options }
 

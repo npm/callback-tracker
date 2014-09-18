@@ -18,15 +18,15 @@ test('basic', function (t) {
     stderr.push([].slice.call(arguments))
   }
 
-  var cb = trackCb(function () {
+  var cb = trackCb({ key: 'testing' }, function () {
     console.error('CALLED 1')
-  }, { key: 'testing' })
+  })
 
   cb.track('starting')
 
-  var cb2 = trackCb(function () {
+  var cb2 = trackCb({ key: 'testing' }, function () {
     console.error('CALLED 2')
-  }, { key: 'testing' })
+  })
 
   t.equal(cb.key, 'testing')
   t.equal(cb2.key, 'testing_1')

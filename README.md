@@ -25,7 +25,7 @@ function someMethodOfMine(args, cb) {
   // tagline should ideally be unique to this *call*
   // but that is not essential.  What's important is to provide
   // enough details that you'll know wtf it was trying to do.
-  cb = cbTracker(cb, 'some-method:' + args.join(':'))
+  cb = cbTracker('some-method:' + args.join(':'), cb)
 
   cb.track('start')
   fs.readFile('some-file', function (er, data) {
@@ -50,7 +50,7 @@ like `console.log` and the like.
 
 ## API
 
-* `trackCb(callback, options)`  Returns a tracked callback.  Tracked
+* `trackCb(options, callback)`  Returns a tracked callback.  Tracked
   callbacks have a `cb.track()` method, and a `cb.key` property.
 * `trackCb.print()` Dump currently in-progress trackers.
 * `trackCb.pretty()` Return a prettified string of the trackers in

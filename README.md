@@ -53,6 +53,8 @@ like `console.log` and the like.
 * `trackCb(callback, options)`  Returns a tracked callback.  Tracked
   callbacks have a `cb.track()` method, and a `cb.key` property.
 * `trackCb.print()` Dump currently in-progress trackers.
+* `trackCb.pretty()` Return a prettified string of the trackers in
+  progress.
 
 ## Options
 

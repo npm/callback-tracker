@@ -5,7 +5,15 @@ var tracks = {}
 
 tracker.print = function () {
   if (Object.keys(tracks).length)
-    console.error(tracks)
+    console.error(tracker.pretty())
+}
+
+tracker.pretty = function pretty () {
+  return Object.keys(tracks).reduce(function (m, key) {
+    return m.concat('# ' + key).concat(tracks[key].map(function (msg) {
+      return '    ' + msg
+    }))
+  }, []).join('\n') + '\n'
 }
 
 process.on('exit', function () {

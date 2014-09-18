@@ -5,11 +5,11 @@ var trackCb = require('../tracker.js')
 test('basic', function (t) {
   var expect = [
     ["CALLED 1"],
-    [{"testing_1":[
-      "starting 2",
-      "called the first cb",
-      "did the throw tests"
-    ]}]
+    [ "# testing_1\n" +
+      "    starting 2\n" +
+      "    called the first cb\n" +
+      "    did the throw tests\n"
+    ]
   ]
   var ce = console.error
 

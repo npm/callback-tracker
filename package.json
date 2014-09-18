@@ -1,0 +1,26 @@
+{
+  "name": "callback-tracker",
+  "version": "0.0.0",
+  "description": "Track your callbacks.",
+  "main": "tracker.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "^0.4.12"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/npm/callback-tracker"
+  },
+  "author": "Isaac Z. Schlueter <i@izs.me> (http://blog.izs.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/npm/callback-tracker/issues"
+  },
+  "homepage": "https://github.com/npm/callback-tracker"
+}

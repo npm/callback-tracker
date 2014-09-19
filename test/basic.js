@@ -47,6 +47,10 @@ test('basic', function (t) {
     cb.track('x')
   })
 
+  t.throws(function () {
+    trackCb('foo', 'not a function')
+  })
+
   cb2.track('did the throw tests')
 
   trackCb.print()

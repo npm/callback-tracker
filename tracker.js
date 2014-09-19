@@ -25,6 +25,9 @@ function tracker (options, cb) {
   if (typeof options === 'string')
     options = { key: options }
 
+  if (typeof cb !== 'function')
+    throw new Error('No callback to track')
+
   if (typeof options.key !== 'string' || !options.key)
     throw new Error('key option is required')
 

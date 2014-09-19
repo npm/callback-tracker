@@ -58,7 +58,7 @@ function tracker (options, cb) {
     var message = util.format.apply(util, arguments)
     if (called) {
       throw new Error('Called cb.track() after calling cb\n' +
-                      key + '\n' + msg)
+                      key + '\n' + message)
     }
 
     if (options.track !== false) {

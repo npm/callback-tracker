@@ -55,11 +55,13 @@ function tracker (options, cb) {
   }
 
   function track () {
-    if (called)
-      throw new Error('Called cb.track() after calling cb: ' + key)
+    var message = util.format.apply(util, arguments)
+    if (called) {
+      throw new Error('Called cb.track() after calling cb\n' +
+                      key + '\n' + msg)
+    }
 
     if (options.track !== false) {
-      var message = util.format.apply(util, arguments)
       tracks[key] = tracks[key] || []
       tracks[key].push(message)
     }
